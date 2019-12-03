@@ -7,7 +7,7 @@ import org.springframework.data.repository.CrudRepository;
 /**
  * DepartmentRepository
  */
-public interface DepartmentRepository extends CrudRepository<Department,Long>{
+public interface DepartmentRepository extends CrudRepository<Department, Long>{
 
     
 }

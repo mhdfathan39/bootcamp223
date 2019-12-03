@@ -7,10 +7,11 @@ import lombok.Data;
 
 
 @Entity
-@Table(name="departments")
+@Table(name = "departments")
 public class Department {
     @Id
-    @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "deptid_pk")
+    @SequenceGenerator(name = "deptid_pk", sequenceName = "departments_department_id_seq", allocationSize = 3)
     @Column(name="department_id")
     private Long departmentId;
 

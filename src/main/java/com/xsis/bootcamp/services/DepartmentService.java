@@ -1,5 +1,7 @@
 package com.xsis.bootcamp.services;
 
+import java.util.Optional;
+
 import com.xsis.bootcamp.model.Department;
 import com.xsis.bootcamp.repository.DepartmentRepository;
 
@@ -15,8 +17,20 @@ public class DepartmentService {
     @Autowired
     private DepartmentRepository departmentRepository;
     
-    public Iterable<Department> getDepartments(){
+    public Iterable<Department> getDepartments() {
         return departmentRepository.findAll();
+    }
+    
+    public Optional<Department> findDeptById(Long deptId) {
+        return departmentRepository.findById(deptId);
+    }
+
+    public void saveDept(Department department) {
+        departmentRepository.save(department);
+    }
+
+    public void deleteDept(Long deptId) {
+        departmentRepository.deleteById(deptId);
     }
     
 }
