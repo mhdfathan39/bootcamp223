@@ -1,0 +1,37 @@
+<html lang="en" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+  xmlns:with="http://www.thymeleaf.org/extras/with" layout:decorate="~{layout}" with:title="'B210'">
+<th:block layout:fragment="content">
+  <div class="bottom">
+    <div class="col">
+      <div class="container">
+        <button class="btn btn-success nBtn"> New Department </button>
+        <div class="card">
+          <div class="card-block">
+            <table class="table table-hover">
+              <thead>
+                <tr>
+                  <th>Department Id</th>
+                  <th>Department Name</th>
+                  <th>Location Id</th>
+                  <th> </th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr th:each="dept :${departments}">
+                  <td th:text="${dept.departmentId}"></td>
+                  <td th:text="${dept.departmentName}"></td>
+                  <td th:text="${dept.locationId}"></td>
+                </tr>
+              </tbody>
+            </table>
+            <hr />
+          </div>
+          <div class="modal-body">
+            <!-- Content will be loaded here...  -->
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</th:block>
