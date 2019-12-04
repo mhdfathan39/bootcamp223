@@ -10,7 +10,8 @@ import java.util.stream.Stream;
 @Table(name="regions")
 public class Regions {
     @Id
-    @GeneratedValue(strategy=GenerationType.IDENTITY)
+    @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "region_id_seq")
+    @SequenceGenerator(name = "region_id_seq", sequenceName = "regions_region_id_seq", initialValue = 5, allocationSize = 1)
     @Column(name="region_id")
     private Integer regionId;
 

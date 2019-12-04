@@ -8,7 +8,7 @@ public class Countries {
     
     @Id
     @Column(name="country_id")
-    private char countryId;
+    private String countryId;
 
     @Column(name="country_name")
     private String countryName;
@@ -17,10 +17,16 @@ public class Countries {
     @JoinColumn(name = "region_id")
     private Regions regions;
 
-    public Countries(){}
+    public Countries() {
+    }
 
+    
+    public Countries(String countryId, String countryName) {
+        this.countryId = countryId;
+        this.countryName = countryName;
+    }
 
-    public Countries(char countryId, String countryName, Regions regions) {
+    public Countries(String countryId, String countryName, Regions regions) {
         this.countryId = countryId;
         this.countryName = countryName;
         this.regions = regions;
@@ -30,14 +36,14 @@ public class Countries {
     /**
      * @return char return the countryId
      */
-    public char getCountryId() {
+    public String getCountryId() {
         return countryId;
     }
 
     /**
      * @param countryId the countryId to set
      */
-    public void setCountryId(char countryId) {
+    public void setCountryId(String countryId) {
         this.countryId = countryId;
     }
 

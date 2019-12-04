@@ -17,5 +17,18 @@ public class RegionsServiceImpl implements RegionsService  {
         // TODO Auto-generated method stub
         return regionsRepos.findAll();
     }
+
+    @Override
+    public void saveRegions(Regions regions) {
+        // TODO Auto-generated method stub
+        regionsRepos.save(regions);
+
+    }
+
+    @Override
+    public void saveAll(Iterable<Regions> regions) {
+        // TODO Auto-generated method stub
+        regionsRepos.saveAll(regions);
+    }
     
 }
