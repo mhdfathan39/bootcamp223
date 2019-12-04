@@ -18,7 +18,9 @@
 
                             <div class="form-group">
                                 <label for="name">Region</label>
-                                <input type="text" class="form-control" th:field="*{regionName}" id="category" placeholder="Region Name">
+                                <input type="text" class="form-control" th:field="*{regionName}" id="regionName" placeholder="Region Name">
+                                <span class="validationError" th:if="${#fields.hasErrors('regionName')}"
+                                th:errors="*{regionName}">Region Name Error</span>
                             </div>
                             <div>
                                 <table>

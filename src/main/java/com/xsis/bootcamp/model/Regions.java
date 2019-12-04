@@ -1,6 +1,8 @@
 package com.xsis.bootcamp.model;
 
 import javax.persistence.*;
+import javax.validation.constraints.NotBlank;
+
 import java.util.Set;
 import java.util.stream.Collectors;
 import java.util.stream.Stream;
@@ -15,7 +17,8 @@ public class Regions {
     @Column(name="region_id")
     private Integer regionId;
 
-    @Column(name="region_name")
+    @Column(name = "region_name")
+    @NotBlank(message="reqion name required")
     private String regionName;
 
     @OneToMany(mappedBy = "regions", cascade = CascadeType.ALL, fetch = FetchType.LAZY)

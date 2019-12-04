@@ -2,7 +2,7 @@ package com.xsis.bootcamp.dto;
 
 import java.util.ArrayList;
 
-
+import javax.validation.constraints.NotBlank;
 
 import com.xsis.bootcamp.model.Countries;
 
@@ -10,8 +10,9 @@ import com.xsis.bootcamp.model.Countries;
  * RegionsDto
  */
 public class RegionsDto {
-
+    @NotBlank(message="region name required")
     private String regionName;
+
     private ArrayList<Countries> countries;
 
 
