@@ -17,6 +17,8 @@ public class Countries {
     @JoinColumn(name = "region_id")
     private Regions regions;
 
+    public Countries(){}
+
 
     public Countries(char countryId, String countryName, Regions regions) {
         this.countryId = countryId;
