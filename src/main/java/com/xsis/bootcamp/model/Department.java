@@ -11,7 +11,7 @@ import lombok.Data;
 public class Department {
     @Id
     @GeneratedValue(strategy = GenerationType.SEQUENCE, generator = "deptid_pk")
-    @SequenceGenerator(name = "deptid_pk", sequenceName = "departments_department_id_seq", allocationSize = 3)
+    @SequenceGenerator(name = "deptid_pk", sequenceName = "departments_department_id_seq",initialValue = 15, allocationSize = 1)
     @Column(name="department_id")
     private Long departmentId;
 
