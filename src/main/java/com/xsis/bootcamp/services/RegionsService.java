@@ -9,5 +9,7 @@ public interface RegionsService {
     void saveRegions(Regions regions);
 
     void saveAll(Iterable<Regions> regions);
+
+    void saveRegion(Regions regions);
     
 }

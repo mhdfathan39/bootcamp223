@@ -30,5 +30,12 @@ public class RegionsServiceImpl implements RegionsService  {
         // TODO Auto-generated method stub
         regionsRepos.saveAll(regions);
     }
+
+    @Override
+    public void saveRegion(Regions regions) {
+        // TODO Auto-generated method stub
+        regionsRepos.save(regions);
+        
+    }
     
 }

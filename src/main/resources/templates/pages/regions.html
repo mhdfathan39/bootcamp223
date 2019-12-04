@@ -38,3 +38,65 @@
     </div>
 </div>
 </th:block>
+
+<th:block layout:fragment="regions">
+    <script>
+        // AJAX request
+        $(".nBtn, .table .eBtn").click(function () {
+            event.preventDefault();
+            var href = $(this).attr('href');
+            var text = $(this).text();
+            console.log('text : ' + text);
+            if (text == 'Edit') {
+                console.log('href : ' + href);
+
+                $.ajax({
+                    url: '/regions/add',
+                    dataType: 'html',
+                    type: 'get',
+                    // data: {},
+                    // data: { userid: userid },
+                    success: function (response) {
+                        console.log('reponse : ' + response);
+                        // Add response in Modal body
+                        $('.modal-body').html(response);
+
+                        $.get(href, function (dept, status) {
+
+                            $('.myFormUpdate #departmentId').val(dept.departmentId);
+                            $('.myFormUpdate #departmentName').val(dept.departmentName);
+                            $('.myFormUpdate #locationId').val(dept.locationId);
+
+                        });
+
+                        // Display Modal
+                        $('.myFormUpdate #updateModal').modal('show');
+                    }
+                });
+
+            } else {
+                // AJAX request
+                $.ajax({
+                    url: '/regions/add',
+                    dataType: 'html',
+                    type: 'get',
+                    // data: {},
+                    // data: { userid: userid },
+                    success: function (response) {
+                        console.log('reponse : ' + response);
+                        // Add response in Modal body
+                        $('.modal-body').html(response);
+
+                        // Display Modal
+                        $('.myFormCreate #myModalCreate').modal('show');
+                    }
+                });
+
+            }
+
+        });
+
+
+
+    </script>
+</th:block>    

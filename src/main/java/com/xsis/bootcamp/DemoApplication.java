@@ -21,7 +21,7 @@ public class DemoApplication {
 		SpringApplication.run(DemoApplication.class, args);
 	}
 
-	@Bean
+	/* @Bean
 	CommandLineRunner runner() {
 		return args -> {
 
@@ -36,6 +36,6 @@ public class DemoApplication {
 			
 
 		};
-	}
+	} */
 
 }
